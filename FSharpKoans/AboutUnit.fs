@@ -1,6 +1,6 @@
 ﻿namespace FSharpKoans
+
 open FSharpKoans.Core
-open Microsoft.FSharp.Reflection
 
 //---------------------------------------------------------------
 // About Unit
@@ -13,18 +13,17 @@ open Microsoft.FSharp.Reflection
 module ``about unit`` =
 
     [<Koan>]
-    let UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
+    let UnitIsUsedWhenThereIsNoReturnValueForAFunction () =
         let sendData data =
             //...sending the data to the server...
             ()
 
         let x = sendData "data"
-        AssertEquality x __ //Don't overthink this. Note also the value "()" displays as "null" in some cases.
+        AssertEquality x () //Don't overthink this. Note also the value "()" displays as "null" in some cases.
 
     [<Koan>]
-    let ParameterlessFunctionsTakeUnitAsTheirArgument() =
-        let sayHello() =
-            "hello"
+    let ParameterlessFunctionsTakeUnitAsTheirArgument () =
+        let sayHello () = "hello"
 
-        let result = sayHello()
-        AssertEquality result __
+        let result = sayHello ()
+        AssertEquality result "hello"
